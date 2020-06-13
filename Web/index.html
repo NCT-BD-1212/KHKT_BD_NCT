@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- import jquery library -->
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <!-- import paho MQTT library -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+    <script src="app.js"></script>
+    <script src="chart.js"></script>
+    <title>Demo</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <form class="addDevice">
+                Input your device key:
+                <input id="inputDeviceKey" class="inputDeviceKey" type="text" name="DeviceKey" placeholder="Device key"
+                    value="">
+                <button id="btnDKey" class="btnDKey" type="button" onclick="">Add device</button>
+            </form>
+        </div>
+        <div class="remoteOption"> Remote Control
+            <div class="remotebtn">
+                <div class="state">
+                    Device Status:
+                    <!--<p id="Destatus" class="diviceStatus">Device not connected!</p>-->
+                    <div class="diviceStatus" id="Destatus"></div>
+                </div>
+                <button id="btnStart" class="btnStart" type="button" onclick="StartDevice()">START</button>
+                <button id="btnStop" class="btnStop" type="button" onclick="StopDevice()">STOP</button>
+            </div>
+        </div>
+        <p style="color: blanchedalmond; margin-left: 20px;">Heartbeat and Rotation Chart</p>
+
+        <div id="chartContainer" class="chart"></div>
+        <div class="DataTable">
+            <p>Data table</p>
+            <table style="width:100%">
+                <tr>
+                    <th>Time</th>
+                    <th>Rotation</th>
+                    <th>Heartbeat</th>
+                </tr>
+            </table>
+            <div class="scrolTable">
+                <table id="myTable" class="DataTable" style="width:100%">
+
+                </table>
+            </div>
+
+            <br>
+        </div>
+        <div id="showJson" style="color: blanchedalmond; margin: 20px;">
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+    <script src="chart.js"></script>
+</body>
+
+</html>
